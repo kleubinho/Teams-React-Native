@@ -7,8 +7,14 @@ import { useState } from "react";
 import { FlatList } from "react-native";
 import * as S from "./styles"; //importando tudo de dentro do styles e colocando S como nome
 
+
 export function Groups() {
   const [groups, setGroups] = useState<string[]>([]);
+
+
+  function handleNewGroup() {
+  }
+
   return (
     <S.Container>
       <Header />
@@ -23,9 +29,10 @@ export function Groups() {
         ListEmptyComponent={() => (
           <ListEmpty message="Que tal cadastrar a primeira turma?" />
         )}
+        showsVerticalScrollIndicator={false}
       />
 
-      <Button title="Criar nova turma" type="PRIMARY" />
+      <Button title="Criar nova turma" type="PRIMARY" onPress={handleNewGroup} />
 
     </S.Container>
   );
